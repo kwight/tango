@@ -18,3 +18,8 @@ gulp.task( 'css', function() {
 });
 
 gulp.task( 'default', [ 'js', 'css' ] );
+
+gulp.task( 'watch', function() {
+	gulp.watch( 'js/components/*.js*', [ 'js' ] );
+	gulp.watch( 'sass/**/*.scss', [ 'css' ] );
+});
