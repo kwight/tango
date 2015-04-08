@@ -4,7 +4,12 @@
   "description": "A React-powered WordPress theme prototype.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-sass": "sass --watch sass/style.scss:style.css",
+    "watch-js": "watchify  -t reactify js/master.jsx -o js/public.js -dv",
+    "watch": "npm run watch-sass & npm run watch-js",
+    "build-js": "browserify -t reactify js/master.jsx | uglifyjs -mc > js/public.js",
+    "build-sass": "sass --sourcemap=none sass/style.scss:style.css",
+    "build": "npm run build-sass & npm run build-js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +22,13 @@
   },
   "homepage": "https://github.com/kwight/tango",
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-notify": "^2.2.0",
-    "gulp-sass": "^1.3.3",
-    "gulp-sourcemaps": "^1.5.1",
-    "gulp-uglify": "^1.1.0"
+    "browserify": "^9.0.7",
+    "node-sass": "^2.1.1",
+    "reactify": "^1.1.0",
+    "uglify-js": "^2.4.19",
+    "watchify": "^3.1.0"
+  },
+  "dependencies": {
+    "react": "^0.13.1"
   }
 }
