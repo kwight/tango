@@ -1,0 +1,22 @@
+{
+  "name": "tango",
+  "version": "1.0.0",
+  "description": "A React-powered WordPress theme prototype.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwight/tango.git"
+  },
+  "author": "kwight",
+  "license": "GPL v2",
+  "bugs": {
+    "url": "https://github.com/kwight/tango/issues"
+  },
+  "homepage": "https://github.com/kwight/tango",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
