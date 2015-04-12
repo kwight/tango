@@ -1,15 +1,45 @@
-var React = require( 'react' );
-var test = require( './components/test.jsx' );
+/**
+ * External dependencies
+ */
+var React = require( 'react' ),
+	request = require( 'superagent' );
 
-var Client = React.createClass({
+/**
+ * Internal dependencies
+ */
+var Index = require( './components/index.jsx' ),
+	Sidebar = require( './components/sidebar.jsx' ),
+	config = require( './config.js' );
+
+var Master = React.createClass({
+	getInitialState: function() {
+		return {
+			posts: []
+		};
+	},
+	componentDidMount: function() {
+		endpoint = config.endpoint + '/posts/';
+
+		request
+			.get( endpoint )
+			.end( function( err, res ){
+				if ( res.ok ) {
+					this.setState({
+						posts: res.body
+					});
+				} else {
+					console.log(res.text);
+				}
+			}.bind( this ) );
+	},
 	render: function() {
 		return (
 			<div>
-				<h1>Master component</h1>
-				<Test />
+				<Index posts = { this.state.posts } />
+				<Sidebar />
 			</div>
 		)
 	}
 });
 
-React.render(<Client />, document.getElementById( 'post-1241' ) );
+React.render(<Master />, document.getElementById( 'content' ) );
