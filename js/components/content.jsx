@@ -34,7 +34,7 @@ Content = React.createClass( {
 	},
 	render: function() {
 		return (
-			<article id={ this.props.post.ID }>
+			<article id={ this.props.post.ID } className="hentry">
 				<header className="entry-header">
 					<h1 className="entry-title">
 						<a href={ this.props.post.link } rel="bookmark" dangerouslySetInnerHTML={ { __html: this.props.post.title.rendered } } />
