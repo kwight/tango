@@ -21,8 +21,8 @@ Index = React.createClass( {
 		});
 
 		return (
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main" role="main">
+			<div id="primary" className="content-area">
+				<main id="main" className="site-main" role="main">
 					{ loop }
 				</main>
 			</div>
