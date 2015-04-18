@@ -19,8 +19,8 @@ Content = React.createClass( {
 		);
 		var author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			// Note: no author archive link in API yet?
-			'http://localhost/trunk/src/author/' + this.props.post.author.slug,
-			this.props.post.author.name
+			'http://localhost/trunk/src/author/' + this.props.post.author,
+			this.props.post.author
 		);
 
 		return sprintf( 'Posted on <span class="posted-on">%1$s</span> by <span class="byline">%2$s</span>', 
@@ -37,13 +37,13 @@ Content = React.createClass( {
 			<article id={ this.props.post.ID }>
 				<header className="entry-header">
 					<h1 className="entry-title">
-						<a href={ this.props.post.link } rel="bookmark" dangerouslySetInnerHTML={ { __html: this.props.post.title } } />
+						<a href={ this.props.post.link } rel="bookmark" dangerouslySetInnerHTML={ { __html: this.props.post.title.rendered } } />
 					</h1>
 
 					<div className="entry-meta" dangerouslySetInnerHTML={ { __html: this.entryMeta() } } />
 				</header>
 
-				<div className="entry-content" dangerouslySetInnerHTML={ { __html: this.props.post.content } } />
+				<div className="entry-content" dangerouslySetInnerHTML={ { __html: this.props.post.excerpt.rendered } } />
 
 				<footer className="entry-footer">
 					<span className="cat-links"></span>
