@@ -86,6 +86,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "site/header/header";
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";

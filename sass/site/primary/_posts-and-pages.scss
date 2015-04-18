@@ -3,7 +3,10 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	background: $color__background-hentry;
+	border-bottom: 1px solid;
+	border-bottom-color: $color__border-elements;
+	padding: 0.5em 1.5em 1.5em;
 }
 
 .byline,

@@ -1,4 +1,6 @@
 .main-navigation {
+	border-bottom: 1px solid;
+	border-bottom-color: $color__border-elements;
 	clear: both;
 	display: block;
 	float: left;
@@ -11,10 +13,10 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			background: $color__background-body;
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: 2.5em;
 			left: -999em;
 			z-index: 99999;
 
@@ -24,6 +26,8 @@
 			}
 
 			li {
+				border-bottom: 1px solid;
+				border-bottom-color: $color__border-elements;
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -58,6 +62,7 @@
 	}
 	a {
 		display: block;
+		padding: 0.5em;
 		text-decoration: none;
 	}
 
