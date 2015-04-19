@@ -1,9 +1,13 @@
 /**
  * Site-specific configuration
+ *
+ * api: (required) base URL to WP-API, eg. "http://localhost/wp-json"
+ * subdir: (optional) sub-directory of your install, used for routing eg. "/trunk/src"
  */
 
  var config = {
- 	endpoint: "http://localhost/trunk/src/wp-json"
+	api: "",
+	subdir: ""
  }
 
  module.exports = config;
