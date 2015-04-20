@@ -2,6 +2,7 @@
  * External dependencies
  */
 var React = require( 'react' ),
+	page = require( 'page' ),
 	request = require( 'superagent' );
 
 /**
@@ -9,7 +10,11 @@ var React = require( 'react' ),
  */
 var Index = require( './components/index.jsx' ),
 	Sidebar = require( './components/sidebar.jsx' ),
-	config = require( './config.js' );
+	config = require( './config.js' ),
+	router = require( './routes.js' );
+
+router();
+
 
 var Master = React.createClass({
 	getInitialState: function() {
@@ -18,10 +23,8 @@ var Master = React.createClass({
 		};
 	},
 	componentDidMount: function() {
-		endpoint = config.endpoint + '/posts/';
-
 		request
-			.get( endpoint )
+			.get( this.props.endpoint )
 			.end( function( err, res ){
 				if ( res.ok ) {
 					this.setState({
@@ -41,5 +44,3 @@ var Master = React.createClass({
 		)
 	}
 });
-
-React.render(<Master />, document.getElementById( 'content' ) );

@@ -13,10 +13,10 @@ var Content = require( './content.jsx' );
  * 
  */
 Index = React.createClass( {
-	render: function() {
+	render: function() { console.log(this.props.posts);
 		var loop = this.props.posts.map( function( post ) {
 			return (
-				<Content key={ post.ID } post={ post } />
+				<Content key={ post.id } post={ post } />
 			);
 		});
 
