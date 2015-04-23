@@ -17,7 +17,9 @@ var Router = {
 		}
 
 		page( '/', this.index, this.render );
-		page( '/:slug', this.slug, this.render );
+		page( /^\/\d{4}\/\d{2}\/\d{2}\/([a-z0-9-]+)\/$/, this.post, this.render );
+		page( /^[a-z0-9-\/]+\/([a-z0-9-]+)\/$/, this.page, this.render );
+		page( /^\/([a-z0-9-]+)\/$/, this.page, this.render );
 		page( '*', this.notfound, this.render );
 
 		page( { dispatch: false } );
@@ -26,8 +28,12 @@ var Router = {
 		context.params.endpoint = config.api + '/wp/posts';
 		next();
 	},
-	slug: function( context, next ) {console.log(context);console.log(next);
-		context.params.endpoint = config.api + '/wp/posts?name=' + context.params.slug;
+	post: function( context, next ) {
+		context.params.endpoint = config.api + '/wp/posts?name=' + context.params[0];
+		next();
+	},
+	page: function( context, next ) {
+		context.params.endpoint = config.api + '/wp/pages?name=' + context.params[0];
 		next();
 	},
 	notfound: function() {
