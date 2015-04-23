@@ -2,21 +2,16 @@
  * External dependencies
  */
 var React = require( 'react' ),
-	page = require( 'page' ),
 	request = require( 'superagent' );
 
 /**
  * Internal dependencies
  */
-var Index = require( './components/index.jsx' ),
-	Sidebar = require( './components/sidebar.jsx' ),
-	config = require( './config.js' ),
-	router = require( './routes.js' );
-
-router();
+var Index = require( './index.jsx' ),
+	Sidebar = require( './sidebar.jsx' );
 
 
-var Master = React.createClass({
+Master = React.createClass({
 	getInitialState: function() {
 		return {
 			posts: []
@@ -44,3 +39,5 @@ var Master = React.createClass({
 		)
 	}
 });
+
+module.exports = Master;
