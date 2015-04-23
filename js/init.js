@@ -1,13 +1,9 @@
 /**
- * External dependencies
+ * Internal dependencies
  */
 var Router = require( './router.js' );
 
 /**
- * Internal dependencies
+ * Fire up the router
  */
-var Index = require( './components/index.jsx' ),
-	Sidebar = require( './components/sidebar.jsx' );
-
-
 Router.init();
