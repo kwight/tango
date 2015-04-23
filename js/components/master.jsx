@@ -11,7 +11,7 @@ var Index = require( './index.jsx' ),
 	Sidebar = require( './sidebar.jsx' );
 
 
-Master = React.createClass({
+module.exports = React.createClass({
 	getInitialState: function() {
 		return {
 			posts: []
@@ -39,5 +39,3 @@ Master = React.createClass({
 		)
 	}
 });
-
-module.exports = Master;

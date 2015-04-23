@@ -10,7 +10,7 @@ var React = require( 'react' ),
 var config = require( './config.js' ),
 	Master = require( './components/master.jsx' );
 
-var Router = {
+module.exports = {
 	init: function() {
 		if ( config.subdir ) {
 			page.base( config.subdir );
@@ -44,5 +44,3 @@ var Router = {
 		React.render( <Master endpoint={ context.params.endpoint } />, document.getElementById( 'content' ) );
 	}
 }
-
-module.exports = Router;

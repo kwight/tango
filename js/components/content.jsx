@@ -11,7 +11,7 @@ var React = require( 'react' ),
 /**
  * 
  */
-Content = React.createClass( {
+module.exports = React.createClass( {
 	entryMeta: function() {
 		var time = sprintf( '<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
 			this.props.post.date,
@@ -53,5 +53,3 @@ Content = React.createClass( {
 		);
 	}
 } );
-
-module.exports = Content;

@@ -12,7 +12,7 @@ var Content = require( './content.jsx' );
 /**
  * 
  */
-Index = React.createClass( {
+module.exports = React.createClass( {
 	render: function() {
 		var loop = this.props.posts.map( function( post ) {
 			return (
@@ -29,5 +29,3 @@ Index = React.createClass( {
 		);
 	}
 } );
-
-module.exports = Index;

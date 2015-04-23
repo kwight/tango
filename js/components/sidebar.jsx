@@ -10,7 +10,7 @@ var React = require( 'react' );
 /**
  * 
  */
-Sidebar = React.createClass( {
+module.exports = React.createClass( {
 	render: function() {
 		return (
 			<div id="secondary" className="widget-area" role="complementary">
@@ -18,5 +18,3 @@ Sidebar = React.createClass( {
 		);
 	}
 } );
-
-module.exports = Sidebar;
