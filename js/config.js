@@ -3,11 +3,11 @@
  *
  * api: (required) base URL to WP-API, eg. "http://localhost/wp-json"
  * subdir: (optional) sub-directory of your install, used for routing eg. "/trunk/src"
+ * permalinks: (optional) form of permalinks set under Settings > Permalinks
  */
 
- var config = {
+module.exports = {
 	api: "",
-	subdir: ""
- }
-
- module.exports = config;
+	subdir: "",
+	permalinks: ""
+}
