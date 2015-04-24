@@ -16,7 +16,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
+		<?php
+			/* translators: %s: Name of current post */
+			the_content( sprintf(
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+		?>
 
 		<?php
 			wp_link_pages( array(

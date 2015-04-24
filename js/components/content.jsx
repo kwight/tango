@@ -46,7 +46,7 @@ module.exports = React.createClass( {
 					<div className="entry-meta" dangerouslySetInnerHTML={ { __html: this.entryMeta() } } />
 				</header>
 
-				<div className="entry-content" dangerouslySetInnerHTML={ { __html: this.props.post.excerpt.rendered } } />
+				<div className="entry-content" dangerouslySetInnerHTML={ { __html: this.props.post.content.rendered } } />
 
 				<footer className="entry-footer">
 					<span className="cat-links"></span>
