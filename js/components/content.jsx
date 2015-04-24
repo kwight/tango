@@ -32,6 +32,9 @@ module.exports = React.createClass( {
 		var date = new Date( this.props.post.date );
 		return date.toDateString();
 	},
+	editLink: function() {
+		return 'http://localhost/trunk/src/wp-admin/post.php?post=' + this.props.post.id + '&action=edit';
+	},
 	render: function() {
 		return (
 			<article id={ this.props.post.ID } className="hentry">
@@ -48,6 +51,7 @@ module.exports = React.createClass( {
 				<footer className="entry-footer">
 					<span className="cat-links"></span>
 					<span className="comments-link"></span>
+					<span className="edit-link"><a href={ this.editLink() } rel="external">Edit</a></span>
 				</footer>
 			</article>
 		);
