@@ -70,7 +70,17 @@ module.exports = React.createClass( {
 		);
 	},
 	entryFooter: function() {
-		return this.catLinks() + this.tagLinks() + this.editLink();
+		var html = '';
+		if ( this.catLinks() ) {
+			html += this.catLinks();
+		}
+		if ( this.tagLinks() ) {
+			html += this.tagLinks();
+		}
+		if ( this.editLink() ) {
+			html += this.editLink();
+		}
+		return html;
 	},
 	postClasses: function() {
 		return this.props.post.post_class.join([separator = ' ']);
