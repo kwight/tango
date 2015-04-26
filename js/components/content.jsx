@@ -18,8 +18,7 @@ module.exports = React.createClass( {
 			this.date()
 		);
 		var author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			// Note: no author archive link in API yet?
-			'http://localhost/trunk/src/author/' + this.props.post.author.name,
+			this.props.post.author.link,
 			this.props.post.author.name
 		);
 
