@@ -8,6 +8,7 @@
 
 module.exports = {
 	api: "",
+	serverRoot: "",
 	subdir: "",
 	permalinks: ""
 }

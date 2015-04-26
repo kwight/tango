@@ -7,6 +7,7 @@ var React = require( 'react' ),
 /**
  * Internal dependencies
  */
+var config = require( '../config.js' );
 
 /**
  * 
@@ -31,8 +32,46 @@ module.exports = React.createClass( {
 		var date = new Date( this.props.post.date );
 		return date.toDateString();
 	},
+	catLinks: function() {
+		if ( ! this.props.post.categories ) {
+			return false;
+		}
+
+		var catLinks = [];
+
+		this.props.post.categories.map( function( category ) {
+			catLinks.push( '<a href="' + category.link + '" rel="category tag">' + category.name + '</a>' );
+		});
+
+		return sprintf( '<span class="cat-links">Posted in %s</span>',
+			catLinks.join([separator = ', '])
+		);
+	},
+	tagLinks: function() {
+		if ( ! this.props.post.tags ) {
+			return false;
+		}
+
+		var tagLinks = [];
+
+		this.props.post.tags.map( function( tag ) {
+			tagLinks.push( '<a href="' + tag.link + '" rel="tag">' + tag.name + '</a>' );
+		});
+
+		return sprintf( '<span class="cat-links">Tagged %s</span>',
+			tagLinks.join([separator = ', '])
+		);
+	},
 	editLink: function() {
-		return 'http://localhost/trunk/src/wp-admin/post.php?post=' + this.props.post.id + '&action=edit';
+		var link = config.serverRoot + config.subdir + '/wp-admin/post.php?post=' + this.props.post.id + '&action=edit';
+
+		return sprintf( '<span class="edit-link"><a href="%s" rel="external">Edit</span>',
+			link
+		);
+	},
+	entryFooter: function() {
+		return this.catLinks() + this.tagLinks() + this.editLink();
+	},
 	},
 	render: function() {
 		return (
@@ -47,11 +86,7 @@ module.exports = React.createClass( {
 
 				<div className="entry-content" dangerouslySetInnerHTML={ { __html: this.props.post.content.rendered } } />
 
-				<footer className="entry-footer">
-					<span className="cat-links"></span>
-					<span className="comments-link"></span>
-					<span className="edit-link"><a href={ this.editLink() } rel="external">Edit</a></span>
-				</footer>
+				<footer className="entry-footer"  dangerouslySetInnerHTML={ { __html: this.entryFooter() } } />
 			</article>
 		);
 	}
