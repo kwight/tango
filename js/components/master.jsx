@@ -33,7 +33,7 @@ module.exports = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<Index posts = { this.state.posts } />
+				<Index posts={ this.state.posts } />
 				<Sidebar />
 			</div>
 		)
