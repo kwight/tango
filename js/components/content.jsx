@@ -72,10 +72,12 @@ module.exports = React.createClass( {
 	entryFooter: function() {
 		return this.catLinks() + this.tagLinks() + this.editLink();
 	},
+	postClasses: function() {
+		return this.props.post.post_class.join([separator = ' ']);
 	},
 	render: function() {
 		return (
-			<article id={ this.props.post.ID } className="hentry">
+			<article id={ 'post-' + this.props.post.id } className={ this.postClasses() }>
 				<header className="entry-header">
 					<h1 className="entry-title">
 						<a href={ this.props.post.link } rel="bookmark" dangerouslySetInnerHTML={ { __html: this.props.post.title.rendered } } />
