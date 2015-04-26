@@ -1,8 +1,7 @@
 /**
  * External dependencies
  */
-var React = require( 'react' ),
-	request = require( 'superagent' );
+var React = require( 'react' );
 
 /**
  * Internal dependencies
