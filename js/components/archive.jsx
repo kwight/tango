@@ -32,6 +32,11 @@ module.exports = React.createClass( {
 			<div>
 				<div id="primary" className="content-area">
 					<main id="main" className="site-main" role="main">
+						<header className="page-header">
+							<h1 className="page-title">
+								{ this.props.title }
+							</h1>
+						</header>
 						{ loop }
 					</main>
 				</div>

@@ -8,7 +8,7 @@ var React = require( 'react' ),
  * Internal dependencies
  */
 var getPosts = require( './shared/get-posts.jsx' ),
-	Content = require( './content.jsx' ),
+	ContentPage = require( './content-page.jsx' ),
 	Sidebar = require( './sidebar.jsx' );
 
 /**
@@ -24,7 +24,7 @@ module.exports = React.createClass( {
 	render: function() {
 		var loop = this.state.posts.map( function( post ) {
 			return (
-				<Content key={ post.id } post={ post } />
+				<ContentPage key={ post.id } post={ post } />
 			);
 		});
 
