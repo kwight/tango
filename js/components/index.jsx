@@ -1,19 +1,28 @@
 /**
  * External dependencies
  */
-var React = require( 'react' );
+var React = require( 'react' ),
+	request = require( 'superagent' );
 
 /**
  * Internal dependencies
  */
-var Content = require( './content.jsx' );
+var getPosts = require( './shared/get-posts.jsx' ),
+	Content = require( './content.jsx' ),
+	Sidebar = require( './sidebar.jsx' );
 
 /**
  * 
  */
 module.exports = React.createClass( {
+	mixins: [getPosts],
+	getInitialState: function() {
+		return {
+			posts: []
+		};
+	},
 	render: function() {
-		var loop = this.props.posts.map( function( post ) {
+		var loop = this.state.posts.map( function( post ) {
 			return (
 				<Content key={ post.id } post={ post } />
 			);
