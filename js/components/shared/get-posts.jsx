@@ -13,6 +13,9 @@ var config = require( '../../config.js' );
  * 
  */
 module.exports = {
+	componentWillReceiveProps: function( props ) {
+		this.makeRequest( props.endpoint );
+	},
 	componentDidMount: function() {
 		// Ignore caching if disabled in the config.
 		if ( ! config.localStorage ) {
@@ -34,9 +37,10 @@ module.exports = {
 		}
 		
 	},
-	makeRequest: function() {
+	makeRequest: function( endpoint ) {
+		var endpoint = ( endpoint ) ? endpoint : this.props.endpoint;
 		request
-			.get( this.props.endpoint )
+			.get( endpoint )
 			.end( function( err, res ){
 				if ( res.ok ) {
 					// We have posts, so update our state.
