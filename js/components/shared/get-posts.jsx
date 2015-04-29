@@ -13,6 +13,11 @@ var config = require( '../../config.js' );
  * 
  */
 module.exports = {
+	getInitialState: function() {
+		return {
+			posts: []
+		};
+	},
 	componentWillReceiveProps: function( props ) {
 		this.makeRequest( props.endpoint );
 	},

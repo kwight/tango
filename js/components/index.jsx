@@ -16,11 +16,6 @@ var getPosts = require( './shared/get-posts.jsx' ),
  */
 module.exports = React.createClass( {
 	mixins: [getPosts],
-	getInitialState: function() {
-		return {
-			posts: []
-		};
-	},
 	render: function() {
 		var loop = this.state.posts.map( function( post ) {
 			return (
