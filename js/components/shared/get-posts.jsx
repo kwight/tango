@@ -54,7 +54,7 @@ module.exports = {
 					});
 
 					// Save results in localStorage for next time.
-					localStorage.setItem( this.props.endpoint, JSON.stringify( res.body ) );
+					localStorage.setItem( endpoint, JSON.stringify( res.body ) );
 				} else {
 					console.log(res.text);
 				}
