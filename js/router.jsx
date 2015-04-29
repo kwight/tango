@@ -11,7 +11,8 @@ var config = require( './config.js' ),
 	Index = require( './components/index.jsx'),
 	Archive = require( './components/archive.jsx'),
 	Single = require( './components/single.jsx'),
-	Page = require( './components/page.jsx');
+	Page = require( './components/page.jsx'),
+	NotFound = require( './components/not-found.jsx');
 
 Router = React.createClass({
 	getInitialState: function() {
