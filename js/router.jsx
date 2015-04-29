@@ -38,36 +38,38 @@ Router = React.createClass({
 	},
 	index: function( context, next ) {
 		this.setState({
-			template: <Index endpoint={ config.api + '/wp/posts' } />
+			template: <Index endpoint={ config.api + '/wp/v2/posts' } />
 		});
 	},
 	author: function( context, next ) {
 		this.setState({
-			template: <Archive endpoint={ config.api + '/wp/posts?author_name=' + context.params[0] } title={ 'Author: ' + context.params[0] } />
+			template: <Archive endpoint={ config.api + '/wp/v2/posts?author_name=' + context.params[0] } title={ 'Author: ' + context.params[0] } />
 		});
 	},
 	category: function( context, next ) {
 		this.setState({
-			template: <Archive endpoint={ config.api + '/wp/posts?category_name=' + context.params[0] } title={ 'Category: ' + context.params[0] } />
+			template: <Archive endpoint={ config.api + '/wp/v2/posts?category_name=' + context.params[0] } title={ 'Category: ' + context.params[0] } />
 		});
 	},
 	tag: function( context, next ) {
 		this.setState({
-			template: <Archive endpoint={ config.api + '/wp/posts?tag=' + context.params[0] } title={ 'Tag: ' + context.params[0] } />
+			template: <Archive endpoint={ config.api + '/wp/v2/posts?tag=' + context.params[0] } title={ 'Tag: ' + context.params[0] } />
 		});
 	},
 	post: function( context, next ) {
 		this.setState({
-			template: <Single endpoint={ config.api + '/wp/posts?name=' + context.params[0] } />
+			template: <Single endpoint={ config.api + '/wp/v2/posts?name=' + context.params[0] } />
 		});
 	},
 	page: function( context, next ) {
 		this.setState({
-			template: <Page endpoint={ config.api + '/wp/pages?name=' + context.params[0] } />
+			template: <Page endpoint={ config.api + '/wp/v2/pages?name=' + context.params[0] } />
 		});
 	},
 	notfound: function() {
-		console.log('notfound');
+		this.setState({
+			template: <NotFound />
+		});
 	},
 	render: function() {
 		return this.state.template;
