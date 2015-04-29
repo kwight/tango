@@ -40,7 +40,6 @@ module.exports = {
 		else {
 			this.makeRequest();
 		}
-		
 	},
 	makeRequest: function( endpoint ) {
 		var endpoint = ( endpoint ) ? endpoint : this.props.endpoint;
