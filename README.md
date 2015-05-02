@@ -7,10 +7,12 @@ Requires the [WP API Theming](https://github.com/kwight/wp-api-theming) plugin.
 
 ## Installation
 
-1. From the command line, clone the repo into your `wp-content/themes/` folder: `git clone git@github.com:kwight/tango.git`
-2. `cd` into your new Tango theme, and run `npm install`.
-3. Run `npm run build` to create `style.css` and `js/public.js`.
-4. Activate Tango from `Appearance > Themes`.
+1. Install and activate the [WP REST API](https://github.com/WP-API/WP-API) plugin . Leave it on the `develop` branch.
+2. Install and activate the [WP API Theming](https://github.com/kwight/wp-api-theming) plugin.
+3. Clone the Tango repo into your `wp-content/themes/` folder: `git clone git@github.com:kwight/tango.git`
+4. `cd` into your new Tango theme, and run `npm install`.
+5. Run `npm run build` to create `style.css` and `js/public.js`.
+6. Activate Tango from `Appearance > Themes`.
 
 ## Configuration
 
