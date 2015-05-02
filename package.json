@@ -24,6 +24,7 @@
   "devDependencies": {
     "browserify": "^9.0.7",
     "node-sass": "^2.1.1",
+    "page": "^1.6.3",
     "reactify": "^1.1.0",
     "sprintf-js": "^1.0.2",
     "uglify-js": "^2.4.19",
