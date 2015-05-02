@@ -7,7 +7,7 @@
     "watch-sass": "sass --watch sass/style.scss:style.css",
     "watch-js": "watchify -t reactify js/router.jsx -o js/public.js -dv",
     "watch": "npm run watch-sass & npm run watch-js",
-    "build-js": "browserify -t reactify js/master.jsx | uglifyjs -mc > js/public.js",
+    "build-js": "browserify -t reactify js/router.jsx | uglifyjs -mc > js/public.js",
     "build-sass": "sass --sourcemap=none sass/style.scss:style.css",
     "build": "npm run build-sass & npm run build-js"
   },
