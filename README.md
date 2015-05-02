@@ -18,10 +18,10 @@ Requires the [WP API Theming](https://github.com/kwight/wp-api-theming) plugin.
 
 Tango requires some basic information to be able to properly connect to the API, and generate accurate links. These are set in `js/config.js`.
 
-`api`: the API's index, eg. `http://localhost/wp-json` (required)
-`serverRoot`: the root folder of your web server, eg. `http://localhost` (required)
-`subdir`: if your WordPress install is in a subfolder of your web server, enter the relative path here, eg. `/trunk/src`
-`localStorage`: whether or not to use [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for API results (note: there is currently no handling for stale results)
+* `api`: the API's index, eg. `http://localhost/wp-json` (required)
+* `serverRoot`: the root folder of your web server, eg. `http://localhost` (required)
+* `subdir`: if your WordPress install is in a subfolder of your web server, enter the relative path here, eg. `/trunk/src`
+* `localStorage`: whether or not to use [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) for API results (note: there is currently no handling for stale results)
 
 ## Development
 
