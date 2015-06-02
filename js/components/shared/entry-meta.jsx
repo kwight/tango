@@ -19,7 +19,7 @@ module.exports = {
 			this.date()
 		);
 		var author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			this.props.post.author.link,
+			this.props.post.author.archive_link,
 			this.props.post.author.name
 		);
 

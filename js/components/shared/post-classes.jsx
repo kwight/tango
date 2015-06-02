@@ -11,6 +11,6 @@
  */
 module.exports = {
 	postClasses: function() {
-		return this.props.post.post_class.join([separator = ' ']);
+		return this.props.post.post_classes.join([separator = ' ']);
 	}
 };
