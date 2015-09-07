@@ -19,8 +19,8 @@ module.exports = {
 			this.date()
 		);
 		var author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			this.props.post.author.archive_link,
-			this.props.post.author.name
+			this.props.post._embedded.author[0].link,
+			this.props.post._embedded.author[0].name
 		);
 
 		return sprintf( 'Posted on <span class="posted-on">%1$s</span> by <span class="byline">%2$s</span>', 
@@ -33,13 +33,14 @@ module.exports = {
 		return date.toDateString();
 	},
 	catLinks: function() {
-		if ( ! this.props.post.categories ) {
+		var categories = this.props.post._embedded['http://v2.wp-api.org/term'][0],
+			catLinks = [];
+
+		if ( ! categories ) {
 			return false;
 		}
 
-		var catLinks = [];
-
-		this.props.post.categories.map( function( category ) {
+		categories.map( function( category ) {
 			catLinks.push( '<a href="' + category.link + '" rel="category tag">' + category.name + '</a>' );
 		});
 
@@ -48,13 +49,14 @@ module.exports = {
 		);
 	},
 	tagLinks: function() {
-		if ( ! this.props.post.tags ) {
+		var tags = this.props.post._embedded['http://v2.wp-api.org/term'][1],
+			tagLinks = [];
+
+		if ( ! tags ) {
 			return false;
 		}
 
-		var tagLinks = [];
-
-		this.props.post.tags.map( function( tag ) {
+		tags.map( function( tag ) {
 			tagLinks.push( '<a href="' + tag.link + '" rel="tag">' + tag.name + '</a>' );
 		});
 
